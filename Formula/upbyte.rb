@@ -11,7 +11,7 @@ class Upbyte < Formula
     depends_on "dotnet" => :build
 
     def install
-        system "dotnet", "publish", "-c", "Release", "-r", "osx-x64"
+        system "dotnet@6", "publish", "-c", "Release", "-r", "osx-x64"
         libexec.install Dir["bin/Release/net6.0/osx-x64/*"]
         bin.write_exec_script "#{libexec}/upbyte"
     end
