@@ -8,11 +8,11 @@ class Upbyte < Formula
     sha256 "a28921ba1314e3c9a8fd7acc584cb56bfdaa47fcc6e46b1eb2063e121a95b6c3"
     version "v0.1"
 
-    depends_on "dotnet-sdk" => :build
+    depends_on "dotnet" => :build
 
     def install
         system "dotnet", "publish", "-c", "Release", "-r", "osx-x64"
         libexec.install Dir["bin/Release/net6.0/osx-x64/*"]
-        bin.write_exec_script "#{libexec}/YourApp"
+        bin.write_exec_script "#{libexec}/upbyte"
     end
 end
