@@ -9,6 +9,13 @@ class Upbyte < Formula
     version "v0.1"
 
     def install
-        bin.install "upbyte"
+        # Create a subdirectory named "bin" and install the "upbyte" file there
+        bin.mkpath
+        system "cp", "upbyte", "#{bin}/upbyte"
+    end
+
+    test do
+        # Test that "upbyte" runs without error
+        system "#{bin}/upbyte", "--help"
     end
 end
