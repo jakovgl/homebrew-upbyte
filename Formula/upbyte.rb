@@ -1,17 +1,13 @@
 class Upbyte < Formula
   desc "UpByte - Simple console monitoring tool for web apis"
   homepage "https://github.com/jglavas/upbyte"
-  url "https://github.com/jglavas/upbyte/archive/refs/tags/v0.1.tar.gz"
-  sha256 "a28921ba1314e3c9a8fd7acc584cb56bfdaa47fcc6e46b1eb2063e121a95b6c3"
+  url "https://github.com/jglavas/upbyte/releases/download/v0.1/upbyte"
+  sha256 "b88ab418499e76de00d6f3d38e82b6c913d1146823a6e06a2c03f2b840a3c295"
   license "MIT"
   version "0.1"
 
   def install
-      system "dotnet", "publish", "-c", "Release", "-r", "osx-x64"
-      bin.install "bin/Release/net6.0/osx-x64/Upbyte.Console" => "upbyte"
+      bin.install "upbyte"
   end
 
-  test do
-      system "#{bin}/upbyte", "--version"
-  end
-  end
+end
