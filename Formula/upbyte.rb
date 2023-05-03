@@ -6,14 +6,14 @@ class Upbyte < Formula
   license "MIT"
   version "0.1"
 
-  depends_on "dotnet"
+  depends_on "dotnet" => :build
 
   def install
-    system "dotnet", "publish", "-c", "Release", "-r", "osx-x64", "--self-contained", "true"
-    bin.install "UpByte.Console/bin/Release/net6.0/osx-x64/publish/UpByte.Console" => "upbyte"
+      system "dotnet", "publish", "-c", "Release", "-r", "osx-x64"
+      bin.install Dir["bin/Release/net6.0/osx-x64/*"]
   end
 
   test do
-    system "false"
+      system "#{bin}/upbyte", "--version"
   end
 end
