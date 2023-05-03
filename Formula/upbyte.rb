@@ -10,7 +10,6 @@ class Upbyte < Formula
 
     def install
         system "dotnet", "publish", "-c", "Release", "-r", "osx-x64"
-        libexec.install Dir["bin/Release/net6.0/osx-x64/*"]
-        bin.write_exec_script "#{libexec}/upbyte"
+        bin.install Dir["bin/Release/net6.0/osx-x64/*"]
     end
 end
