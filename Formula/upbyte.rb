@@ -8,7 +8,7 @@ class Upbyte < Formula
 
   def install
       system "dotnet", "publish", "-c", "Release", "-r", "osx-x64"
-      bin.install "bin/Release/net6.0/osx-x64/Upbyte.Console => "upbyte"
+      bin.install "bin/Release/net6.0/osx-x64/Upbyte.Console" => "upbyte"
   end
 
   test do
