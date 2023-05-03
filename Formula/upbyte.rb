@@ -7,11 +7,11 @@ class Upbyte < Formula
   version "0.1"
 
   def install
-      system "dotnet@6", "publish", "-c", "Release", "-r", "osx-x64"
-      bin.install Dir["bin/Release/net6.0/osx-x64/Upbyte.Console"] => "upbyte"
+      system "dotnet", "publish", "-c", "Release", "-r", "osx-x64"
+      bin.install "bin/Release/net6.0/osx-x64/Upbyte.Console => "upbyte"
   end
 
   test do
       system "#{bin}/upbyte", "--version"
   end
-end
+  end
